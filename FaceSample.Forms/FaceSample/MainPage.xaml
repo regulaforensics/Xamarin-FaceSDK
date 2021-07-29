@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FaceSample.MainPage">
+
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Margin="5">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FirstImage_Clicked"/>
+                </StackLayout.GestureRecognizers>
+                <Frame><Image x:Name="FirstImage" HeightRequest="100" Source="AvatarFirst.png"/></Frame>
+            </StackLayout>
+            <StackLayout Grid.Column="1" Margin="5">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SecondImage_Clicked"/>
+                </StackLayout.GestureRecognizers>
+                <Frame><Image x:Name="SecondImage" HeightRequest="100" Source="AvatarSecond.png"/></Frame>
+            </StackLayout>
+        </Grid>
+        <StackLayout
+            Orientation="Vertical"
+            Padding="20">
+            <Button x:Name="MatchButton" Text="Match" Clicked="MatchFaces_Clicked"/>
+            <Button x:Name="LivenessButton" Text="Liveness" Clicked="Liveness_Clicked"/>
+            <Button x:Name="ClearButton" Text="Clear" Clicked="Clear_Clicked"/>
+        </StackLayout>
+        <StackLayout Padding="20">
+            <Label x:Name="SimilarityLabel" Text="Similarity: null"/>
+            <Label x:Name="LivenessLabel" Text="Liveness: null"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
