@@ -5,13 +5,20 @@ using Xamarin.Forms;
 
 namespace FaceSample
 {
+    enum ImageType
+    {
+        FIRST,
+        SECOND
+    }
+
     public partial class MainPage : ContentPage
     {
         readonly IFaceSdk FaceSdk;
 
         private byte[] FirstImageData, SecondImageData;
+        private ImageType CurrentImageType;
 
-        private Boolean IsEnableButtons
+        private bool IsEnableButtons
         {
             set
             {
@@ -38,7 +45,7 @@ namespace FaceSample
             if (e.LivenessImage != null)
             {
                 FirstImageData = e.LivenessImage;
-                FirstImage.Source = ImageSource.FromStream(() => new MemoryStream(FirstImageData));
+                SetSourceImage(FirstImage, FirstImageData);
             }
         }
 
@@ -60,28 +67,41 @@ namespace FaceSample
             if (e.Image == null)
                 return;
 
-            FirstImageData = e.Image;
-            FirstImage.Source = ImageSource.FromStream(() => new MemoryStream(FirstImageData));
+            var currentImage = CurrentImageType == ImageType.FIRST ? FirstImage : SecondImage;
+            
+            if (CurrentImageType == ImageType.FIRST)
+            {
+                FirstImageData = e.Image;
+            }
+            else
+            {
+                SecondImageData = e.Image;
+            }
+            SetSourceImage(currentImage, e.Image);
         }
 
         async void FirstImage_Clicked(System.Object sender, System.EventArgs evt)
         {
+            CurrentImageType = ImageType.FIRST;
+
             var data = await GetImageAsync();
             if (data == null)
                 return;
 
             FirstImageData = data;
-            FirstImage.Source = ImageSource.FromStream(() => new MemoryStream(FirstImageData));
+            
         }
 
         async void SecondImage_Clicked(System.Object sender, System.EventArgs evt)
         {
+            CurrentImageType = ImageType.SECOND;
+
             var data = await GetImageAsync();
             if (data == null)
                 return;
 
             SecondImageData = data;
-            SecondImage.Source = ImageSource.FromStream(() => new MemoryStream(SecondImageData));
+            SetSourceImage(SecondImage, SecondImageData);
         }
 
         private async Task<byte[]> GetImageAsync()
@@ -131,6 +151,12 @@ namespace FaceSample
 
             FirstImage.Source = ImageSource.FromFile("AvatarFirst.png");
             SecondImage.Source = ImageSource.FromFile("AvatarSecond.png");
+        }
+
+        void SetSourceImage(Image image, byte[] imageData)
+        {
+            image.Source = ImageSource.FromStream(() => new MemoryStream(imageData));
+            SimilarityLabel.Text = "Similarity: null";
         }
     }
 }
