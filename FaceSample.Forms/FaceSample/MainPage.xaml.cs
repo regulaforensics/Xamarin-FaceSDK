@@ -89,7 +89,7 @@ namespace FaceSample
                 return;
 
             FirstImageData = data;
-            
+            SetSourceImage(FirstImage, FirstImageData);
         }
 
         async void SecondImage_Clicked(System.Object sender, System.EventArgs evt)
