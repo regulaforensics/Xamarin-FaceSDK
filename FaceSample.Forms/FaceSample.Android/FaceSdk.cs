@@ -5,6 +5,7 @@ using Android.Graphics;
 using Com.Regula.Facesdk;
 using Com.Regula.Facesdk.Callback;
 using Com.Regula.Facesdk.Model.Results;
+using Com.Regula.Facesdk.Model.Results.Matchfaces;
 using Com.Regula.Facesdk.Request;
 using FaceSample.Droid;
 using Xamarin.Forms;
@@ -47,9 +48,9 @@ namespace FaceSample.Droid
         {
             Bitmap firstBitmap = BitmapFactory.DecodeByteArray(firstStream, 0, firstStream.Length);
             Bitmap secondBitmap = BitmapFactory.DecodeByteArray(secondStream, 0, secondStream.Length);
-            IList<Com.Regula.Facesdk.Model.Image> listImages = new List<Com.Regula.Facesdk.Model.Image>{
-                new Com.Regula.Facesdk.Model.Image(FirstImageIndex, firstBitmap),
-                new Com.Regula.Facesdk.Model.Image(SecondImageIndex, secondBitmap)
+            IList<Com.Regula.Facesdk.Model.MatchFacesImage> listImages = new List<Com.Regula.Facesdk.Model.MatchFacesImage>{
+                new Com.Regula.Facesdk.Model.MatchFacesImage(firstBitmap, FirstImageIndex),
+                new Com.Regula.Facesdk.Model.MatchFacesImage(secondBitmap, SecondImageIndex)
             };
             var matchFacesRequest = new MatchFacesRequest(listImages);
             FaceSDK.Instance().MatchFaces(matchFacesRequest, this);
@@ -64,9 +65,9 @@ namespace FaceSample.Droid
                 matchFacesEvent.Error = matchFacesResponse.Exception.Message;
             } else
             {
-                if (matchFacesResponse.MatchedFaces.Count > 0)
+                if (matchFacesResponse.Results.Count > 0)
                 {
-                    double similarity = matchFacesResponse.MatchedFaces[0].Similarity;
+                    double similarity = matchFacesResponse.Results[0].Similarity;
                     matchFacesEvent.Similarity = similarity;
                     matchFacesEvent.IsSuccess = true;
                 } else

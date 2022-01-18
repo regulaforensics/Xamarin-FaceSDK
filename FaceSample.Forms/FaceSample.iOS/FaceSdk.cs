@@ -54,10 +54,10 @@ namespace FaceSample.iOS
         public void MatchFaces(byte[] firstStream, byte[] secondStream)
         {
             var firsImage = UIImage.LoadFromData(NSData.FromArray(firstStream));
-            var matchFacesRequest = new RFSMatchFacesRequest(new RFSImage[]
+            var matchFacesRequest = new RFSMatchFacesRequest(new RFSMatchFacesImage[]
             {
-                new RFSImage(UIImage.LoadFromData(NSData.FromArray(firstStream)), RFSImageType.Printed),
-                new RFSImage(UIImage.LoadFromData(NSData.FromArray(secondStream)), RFSImageType.Printed)
+                new RFSMatchFacesImage(UIImage.LoadFromData(NSData.FromArray(firstStream)), RFSImageType.Printed),
+                new RFSMatchFacesImage(UIImage.LoadFromData(NSData.FromArray(secondStream)), RFSImageType.Printed)
             });
             RFSFaceSDK.Service.MatchFaces(matchFacesRequest, (RFSMatchFacesResponse matchFacesResponse) => {
                 MatchFacesEvent matchFacesEvent = new MatchFacesEvent();
@@ -68,9 +68,10 @@ namespace FaceSample.iOS
                 }
                 else
                 {
-                    if (matchFacesResponse.MatchedFaces.Length > 0)
+                    RFSMatchFacesSimilarityThresholdSplit split = RFSMatchFacesSimilarityThresholdSplit.SplitPairs(matchFacesResponse.Results, 0.75);
+                    if (split.MatchedFaces.Length > 0)
                     {
-                        double similarity = ((float)matchFacesResponse.MatchedFaces[0].Similarity);
+                        double similarity = ((float)split.MatchedFaces[0].Similarity);
                         matchFacesEvent.Similarity = similarity;
                         matchFacesEvent.IsSuccess = true;
                     }
@@ -143,7 +144,7 @@ namespace FaceSample.iOS
             {
                 Byte[] myByteArray = new Byte[imageData.Length];
                 System.Runtime.InteropServices.Marshal.Copy(imageData.Bytes, myByteArray, 0, Convert.ToInt32(imageData.Length));
-                 return myByteArray;
+                return myByteArray;
             }
         }
     }
