@@ -7,6 +7,7 @@ using Com.Regula.Facesdk.Callback;
 using Com.Regula.Facesdk.Model.Results;
 using Com.Regula.Facesdk.Model.Results.Matchfaces;
 using Com.Regula.Facesdk.Request;
+using Com.Regula.Facesdk.Enums;
 using FaceSample.Droid;
 using Xamarin.Forms;
 
@@ -34,8 +35,8 @@ namespace FaceSample.Droid
 
     public class FaceSdk: Java.Lang.Object, IFaceSdk, ILivenessCallback, IMatchFaceCallback, IFaceCaptureCallback
     {
-        private int FirstImageIndex = 1;
-        private int SecondImageIndex = 2;
+        private ImageType FirstImage = ImageType.Printed;
+        private ImageType SecondImage = ImageType.Rfid;
         public FaceSdk()
         {
         }
@@ -49,8 +50,8 @@ namespace FaceSample.Droid
             Bitmap firstBitmap = BitmapFactory.DecodeByteArray(firstStream, 0, firstStream.Length);
             Bitmap secondBitmap = BitmapFactory.DecodeByteArray(secondStream, 0, secondStream.Length);
             IList<Com.Regula.Facesdk.Model.MatchFacesImage> listImages = new List<Com.Regula.Facesdk.Model.MatchFacesImage>{
-                new Com.Regula.Facesdk.Model.MatchFacesImage(firstBitmap, FirstImageIndex),
-                new Com.Regula.Facesdk.Model.MatchFacesImage(secondBitmap, SecondImageIndex)
+                new Com.Regula.Facesdk.Model.MatchFacesImage(firstBitmap, FirstImage),
+                new Com.Regula.Facesdk.Model.MatchFacesImage(secondBitmap, SecondImage)
             };
             var matchFacesRequest = new MatchFacesRequest(listImages);
             FaceSDK.Instance().MatchFaces(matchFacesRequest, this);
