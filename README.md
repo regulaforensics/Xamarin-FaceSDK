@@ -10,6 +10,9 @@ Face SDK is a framework that is used for face matching, recognition, and livenes
 1. Download or clone this repository using the command `git clone https://github.com/regulaforensics/Xamarin-FaceSDK.git`.
 2. Open the project and run it.
 
+## Support Android devices without Google Mobile Services
+Devices that do not have Google Mobile Services (GMS) such as Huawei need to include the Huawei Vision library. Add our Huawei Vision package to your project that can be found [here](https://www.nuget.org/packages/Xamarin.Regula.HuaweiVision.Android).
+
 ## Documentation
 You can find documentation on API [here](https://docs.regulaforensics.com/face-sdk).
 
