@@ -35,12 +35,9 @@ namespace FaceSample.Droid
 
     public class FaceSdk: Java.Lang.Object, IFaceSdk, ILivenessCallback, IMatchFaceCallback, IFaceCaptureCallback
     {
-        private ImageType FirstImage = ImageType.Printed;
-        private ImageType SecondImage = ImageType.Rfid;
-        public FaceSdk()
-        {
-        }
-
+        private readonly int FirstImage = ImageType.ImageTypePrinted;
+        private readonly int SecondImage = ImageType.ImageTypeRfid;
+        public FaceSdk() {}
         public event EventHandler<IMatchFacesEvent> MatchFacesResultsObtained;
         public event EventHandler<ILivenessEvent> LivenessResultsObtained;
         public event EventHandler<IFaceCaptureImageEvent> FaceCaptureResultsObtained;
@@ -84,12 +81,12 @@ namespace FaceSample.Droid
 
         public void FaceCaptureImage()
         {
-            FaceSDK.Instance().PresentFaceCaptureActivity(Forms.Context, this);
+            FaceSDK.Instance().PresentFaceCaptureActivity(Android.App.Application.Context, this);
         }
 
         public void StartLiveness()
         {
-            FaceSDK.Instance().StartLiveness(Forms.Context, this);
+            FaceSDK.Instance().StartLiveness(Android.App.Application.Context, this);
         }
 
         public void OnLivenessCompete(LivenessResponse response)
@@ -114,8 +111,7 @@ namespace FaceSample.Droid
             if (captureResponse.Image == null || captureResponse.Image.Bitmap == null)
                 return;
 
-            FaceCaptureImageEvent faceCaptureImageEvent = new FaceCaptureImageEvent();
-            faceCaptureImageEvent.Image = ConvertBitmap(captureResponse.Image.Bitmap);
+            FaceCaptureImageEvent faceCaptureImageEvent = new FaceCaptureImageEvent { Image = ConvertBitmap(captureResponse.Image.Bitmap) };
             FaceCaptureResultsObtained(this, faceCaptureImageEvent);
         }
 

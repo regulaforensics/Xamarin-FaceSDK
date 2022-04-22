@@ -1,3 +1,5 @@
-.vs/
-bin/
-obj/
+**/.vs/
+**/obj/*
+**/bin/*
+**/packages/*
+**/Resource.designer.cs
