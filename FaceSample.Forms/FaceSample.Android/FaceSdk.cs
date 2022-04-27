@@ -35,8 +35,8 @@ namespace FaceSample.Droid
 
     public class FaceSdk: Java.Lang.Object, IFaceSdk, ILivenessCallback, IMatchFaceCallback, IFaceCaptureCallback
     {
-        private readonly int FirstImage = ImageType.ImageTypePrinted;
-        private readonly int SecondImage = ImageType.ImageTypeRfid;
+        private readonly ImageType FirstImage = ImageType.Printed;
+        private readonly ImageType SecondImage = ImageType.Rfid;
         public FaceSdk() {}
         public event EventHandler<IMatchFacesEvent> MatchFacesResultsObtained;
         public event EventHandler<ILivenessEvent> LivenessResultsObtained;
