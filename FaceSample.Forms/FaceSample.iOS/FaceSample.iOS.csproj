@@ -132,13 +132,16 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
-    <PackageReference Include="Xamarin.Regula.FaceApi.iOS">
-      <Version>6.1.1059.1</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FaceSample\FaceSample.csproj">
       <Name>FaceSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Face\FaceApi.iOS\FaceApi.iOS.csproj">
+      <Name>FaceApi.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Api\RegulaCommon.iOS\RegulaCommon.iOS.csproj">
+      <Name>RegulaCommon.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
