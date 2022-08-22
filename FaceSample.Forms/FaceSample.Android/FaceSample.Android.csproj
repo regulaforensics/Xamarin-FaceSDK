@@ -32,9 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-<AndroidManifest></AndroidManifest>
-<AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,11 +59,9 @@
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
       <Version>2.1.3.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.ConstraintLayout.Solver">
-      <Version>2.0.4.8</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.ConstraintLayout.Solver" Version="2.0.2" />
     <PackageReference Include="Xamarin.Regula.FaceApi.Android">
-      <Version>3.2.1688</Version>
+      <ScriptTag>Api</ScriptTag><Version>4.1.1745</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

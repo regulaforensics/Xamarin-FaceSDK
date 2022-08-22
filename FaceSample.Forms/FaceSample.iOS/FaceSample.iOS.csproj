@@ -133,12 +133,11 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
     <PackageReference Include="Xamarin.Regula.FaceApi.iOS">
-      <Version>3.2.1125</Version>
+      <ScriptTag>Api</ScriptTag><Version>4.1.1153</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FaceSample\FaceSample.csproj">
-      <Project>{8D740EAA-D369-4C91-BD59-70EF9EA1C1B6}</Project>
       <Name>FaceSample</Name>
     </ProjectReference>
   </ItemGroup>
