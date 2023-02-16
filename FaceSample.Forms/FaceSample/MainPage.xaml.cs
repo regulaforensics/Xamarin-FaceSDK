@@ -32,6 +32,9 @@ namespace FaceSample
         {
             InitializeComponent();
 
+            IFaceSdkInit faceSdkInit = DependencyService.Get<IFaceSdkInit>();
+            faceSdkInit.InitFaceSdk();
+
             FaceSdk = DependencyService.Get<IFaceSdk>();
             FaceSdk.MatchFacesResultsObtained += MatchFacesEventHandler;
             FaceSdk.LivenessResultsObtained += LivenessEventHandler;
