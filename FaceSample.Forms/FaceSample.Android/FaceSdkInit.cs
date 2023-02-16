@@ -20,10 +20,10 @@ namespace FaceSample.Droid
 
         public void OnInitCompleted(bool success, InitException error)
         {
-            if (success)
+            if (success) { 
                 System.Console.WriteLine("Init complete");
-            else
-            {
+                FaceSDK.Instance().ServiceUrl = "https://test-faceapi.regulaforensics.com";
+            } else {
                 System.Console.WriteLine("Init failed:");
                 System.Console.WriteLine(error.Message);
             }

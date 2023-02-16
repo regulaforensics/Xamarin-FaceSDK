@@ -15,9 +15,10 @@ namespace FaceSample.iOS
         {
             RFSFaceSDK.Service.InitializeWithCompletion((bool success, NSError error) =>
             {
-                if (success)
+                if (success) {
                     System.Console.WriteLine("Init complete");
-                else {
+                    RFSFaceSDK.Service.ServiceURL = "https://test-faceapi.regulaforensics.com";
+                } else {
                     System.Console.WriteLine("Init failed:");
                     System.Console.WriteLine(error);
                 }
