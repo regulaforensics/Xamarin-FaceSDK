@@ -22,7 +22,6 @@ namespace FaceSample.Droid
         {
             if (success) { 
                 System.Console.WriteLine("Init complete");
-                FaceSDK.Instance().ServiceUrl = "https://test-faceapi.regulaforensics.com";
             } else {
                 System.Console.WriteLine("Init failed:");
                 System.Console.WriteLine(error.Message);
