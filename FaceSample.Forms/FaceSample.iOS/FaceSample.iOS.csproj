@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PhotoPickerService.cs" />
     <Compile Include="FaceSdk.cs" />
+    <Compile Include="FaceSdkInit.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -132,8 +133,11 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Xamarin.Regula.FaceApi.Core.iOS">
+      <ScriptTag>Core</ScriptTag><Version>5.1.315</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Regula.FaceApi.iOS">
-      <ScriptTag>Api</ScriptTag><Version>4.1.1217</Version>
+      <ScriptTag>Api</ScriptTag><Version>5.1.1368</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

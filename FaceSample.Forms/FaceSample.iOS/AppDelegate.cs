@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -22,6 +21,10 @@ namespace FaceSample.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //WARNING!!!!
+            //Initialization FaceSDK from FaceCoreSDK is required
+            new FaceCoreSDK.iOS.FaceSDK();
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

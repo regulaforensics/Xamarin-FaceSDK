@@ -27,7 +27,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>FaceSample</string>
 	<key>CFBundleIdentifier</key>
-	<string>regula.FaceSdk</string>
+	<string>regula.FaceApi</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
