@@ -61,10 +61,10 @@
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout.Solver" Version="2.0.2" />
     <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.Android">
-      <ScriptTag>Core</ScriptTag><Version>5.1.165</Version>
+      <ScriptTag>Core</ScriptTag><Version>6.3.163</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android">
-      <ScriptTag>Api</ScriptTag><Version>5.1.2320</Version>
+      <ScriptTag>Api</ScriptTag><Version>4.2.2288</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
