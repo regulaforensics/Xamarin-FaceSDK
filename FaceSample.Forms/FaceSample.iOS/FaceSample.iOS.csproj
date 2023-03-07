@@ -137,7 +137,7 @@
       <ScriptTag>Core</ScriptTag><Version>5.1.315.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS">
-      <ScriptTag>Api</ScriptTag><Version>3.2.1345.3</Version>
+      <ScriptTag>Api</ScriptTag><Version>5.1.1368</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
