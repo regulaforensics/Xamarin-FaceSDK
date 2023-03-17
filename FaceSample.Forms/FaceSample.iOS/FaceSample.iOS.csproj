@@ -134,10 +134,10 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
     <PackageReference Include="Xamarin.Regula.FaceApi.Core.iOS">
-      <ScriptTag>Core</ScriptTag><Version>5.1.315</Version>
+      <ScriptTag>Core</ScriptTag><Version>5.1.315.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Regula.FaceApi.iOS">
-      <ScriptTag>Api</ScriptTag><Version>5.1.1368</Version>
+      <ScriptTag>Api</ScriptTag><Version>5.1.1386</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
