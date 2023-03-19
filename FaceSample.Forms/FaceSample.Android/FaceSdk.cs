@@ -6,7 +6,6 @@ using Com.Regula.Facesdk;
 using Com.Regula.Facesdk.Callback;
 using Com.Regula.Facesdk.Model.Results;
 using Com.Regula.Facesdk.Model.Results.Matchfaces;
-using Com.Regula.Facesdk.Configuration;
 using Com.Regula.Facesdk.Request;
 using Com.Regula.Facesdk.Enums;
 using FaceSample.Droid;
@@ -87,12 +86,6 @@ namespace FaceSample.Droid
 
         public void StartLiveness()
         {
-            // example of liveness configuration
-
-            //LivenessConfiguration.Builder config = new LivenessConfiguration.Builder();
-            //config.SetCopyright(false);
-            //FaceSDK.Instance().StartLiveness(Android.App.Application.Context, config.Build(), this);
-
             FaceSDK.Instance().StartLiveness(Android.App.Application.Context, this);
         }
 
