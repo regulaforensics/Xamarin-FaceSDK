@@ -64,7 +64,7 @@
       <ScriptTag>Core</ScriptTag><Version>5.1.165.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android">
-      <ScriptTag>Api</ScriptTag><Version>5.1.2320</Version>
+      <ScriptTag>Api</ScriptTag><Version>5.1.2371.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

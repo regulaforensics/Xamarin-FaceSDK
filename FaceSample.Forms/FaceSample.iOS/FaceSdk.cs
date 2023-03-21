@@ -90,13 +90,13 @@ namespace FaceSample.iOS
         public void StartLiveness()
         {
 
-            // example of set up configuration
+            // example of liveness configuration
 
-            //RFSFaceSDK.Service.StartLivenessFrom(CurrentPresenter, true, RFSLivenessConfiguration.ConfigurationWithBuilder((RFSLivenessConfigurationBuilder builder) => {
-            //    builder.CameraSwitchEnabled = true;
-            //    builder.AttemptsCount = 2;
-            //    builder.CameraPosition = RFSCameraPosition.Back;
-            //}), (RFSLivenessResponse response) => {
+            //RFSFaceSDK.Service.StartLivenessFrom(CurrentPresenter, true, RFSLivenessConfiguration.ConfigurationWithBuilder((RFSLivenessConfigurationBuilder builder) =>
+            //{
+            //    builder.Copyright = false;
+            //}), (RFSLivenessResponse response) =>
+            //{
             //    if (response.Error == null)
             //        Console.WriteLine("No errors");
 
