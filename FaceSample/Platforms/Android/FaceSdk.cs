@@ -91,11 +91,6 @@ namespace FaceSample.Platforms.Android
             FaceSDK.Instance().StartLiveness(Platform.AppContext, this);
         }
 
-        public void StartLiveness()
-        {
-            FaceSDK.Instance().StartLiveness(Platform.AppContext, this);
-        }
-
         public void OnLivenessCompete(LivenessResponse response)
         {
             LivenessEvent livenessEvent = new()
