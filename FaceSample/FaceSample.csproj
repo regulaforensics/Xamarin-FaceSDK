@@ -35,7 +35,7 @@
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="5.1.2371.3"/>
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="5.1.1386.1"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.1.1059.3"/>
     <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.iOS" Version="5.1.315.8"/>
   </ItemGroup>
 </Project>
