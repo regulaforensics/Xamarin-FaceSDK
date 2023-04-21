@@ -8,7 +8,7 @@
     <SingleProject>true</SingleProject>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationTitle>FaceSample</ApplicationTitle>
-    <ApplicationId>com.regula.FaceSDK</ApplicationId>
+    <ApplicationId>regula.FaceSDKSample</ApplicationId>
     <ApplicationIdGuid>533275de-098f-49a9-8e57-f837f3e0ce4b</ApplicationIdGuid>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
