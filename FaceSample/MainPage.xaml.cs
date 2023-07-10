@@ -1,4 +1,4 @@
-﻿namespace FaceSample
+namespace FaceSample
 {
     enum UIImageType
     {
