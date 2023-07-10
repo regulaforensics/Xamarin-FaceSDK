@@ -1,4 +1,4 @@
-namespace FaceSample
+﻿namespace FaceSample
 {
     enum UIImageType
     {
@@ -26,6 +26,11 @@ namespace FaceSample
         public MainPage()
         {
             InitializeComponent();
+            Application.Current.UserAppTheme = AppTheme.Light;
+            Application.Current.RequestedThemeChanged += (s, a) =>
+            {
+                Application.Current.UserAppTheme = AppTheme.Light;
+            };
 
             IFaceSdkInit faceSdkInit = DependencyService.Get<IFaceSdkInit>();
             faceSdkInit.InitFaceSdk();
