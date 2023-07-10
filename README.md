@@ -1,4 +1,4 @@
-# Regula Face SDK (Xamarin version)
+# Regula Face SDK (.NET MAUI version)
 Face SDK is a framework that is used for face matching, recognition, and liveness detection.
 
 # Contents
