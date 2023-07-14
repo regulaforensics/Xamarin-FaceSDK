@@ -39,6 +39,6 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="5.1.1566"/>
-    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.iOS" Version="0.0.382.1"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.iOS" Version="0.0.382.2"/>
   </ItemGroup>
 </Project>
