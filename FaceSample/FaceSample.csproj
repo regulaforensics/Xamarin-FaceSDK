@@ -34,7 +34,7 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
     <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2"/>
-    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.Android" Version="6.3.231"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.Android" Version="5.2.232"/>
     <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="5.2.2715.5"/>
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
