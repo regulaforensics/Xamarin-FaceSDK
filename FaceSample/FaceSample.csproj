@@ -1,22 +1,20 @@
 <?xml version="1.0"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net7.0-android;net7.0-ios;</TargetFrameworks>
+    <TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>FaceSample</RootNamespace>
     <UseMaui>true</UseMaui>
     <SingleProject>true</SingleProject>
-    <!--fix of randomly disappearing images on android-->
-    <MauiVersion>7.0.58</MauiVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <NoWarn>MT4189;MT4178;NETSDK1201</NoWarn>
     <ApplicationTitle>FaceSample</ApplicationTitle>
     <ApplicationId>regula.FaceSDKSample</ApplicationId>
-    <ApplicationIdGuid>533275de-098f-49a9-8e57-f837f3e0ce4b</ApplicationIdGuid>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-ios'">11.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net7.0-android'">23.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
   </PropertyGroup>
   <ItemGroup>
     <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4"/>
@@ -27,18 +25,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0"/>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6"/>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Images\avatar_first.png"/>
-    <BundleResource Include="Resources\Images\avatar_second.png"/>
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.1.1746"/>
+    <PackageReference Include="Xamarin.FaceCore.Basic.Beta.iOS" Version="6.1.584"/>
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
     <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2"/>
-    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.Android" Version="5.2.232"/>
-    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="5.3.3017"/>
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="5.1.1741"/>
-    <PackageReference Include="Xamarin.Regula.FaceApi.Core.Beta.iOS" Version="5.2.383"/>
+    <PackageReference Include="Xamarin.FaceCore.Basic.Beta.Droid" Version="6.1.407"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="6.1.3021"/>
   </ItemGroup>
 </Project>
