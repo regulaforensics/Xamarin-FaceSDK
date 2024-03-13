@@ -4,7 +4,7 @@ using Com.Regula.Facesdk;
 
 namespace FaceSample.Platforms.Android
 {
-    public class FaceSdkInit : Java.Lang.Object, IFaceSdkInit, IInitCallback
+    public class FaceSdkInit : Java.Lang.Object, IFaceSdkInit, IFaceInitializationCompletion
     {
         public FaceSdkInit()
         {
@@ -12,7 +12,7 @@ namespace FaceSample.Platforms.Android
 
         public void InitFaceSdk()
         {
-            FaceSDK.Instance().Init(Platform.AppContext, this);
+            FaceSDK.Instance().Initialize(Platform.AppContext, this);
         }
 
         public void OnInitCompleted(bool success, InitException error)
