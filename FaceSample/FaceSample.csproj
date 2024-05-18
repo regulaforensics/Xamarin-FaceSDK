@@ -28,7 +28,7 @@
     <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7"/>
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.1.1825.3"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.1.1780"/>
     <PackageReference Include="Xamarin.FaceCore.Basic.Beta.iOS" Version="0.0.659"/>
   </ItemGroup>
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
