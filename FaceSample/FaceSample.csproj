@@ -1,43 +1,39 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
-		<OutputType>Exe</OutputType>
-		<RootNamespace>FaceSample</RootNamespace>
-		<UseMaui>true</UseMaui>
-		<SingleProject>true</SingleProject>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-		<NoWarn>MT4189;MT4178;NETSDK1201;XC0022</NoWarn>
-
-		<ApplicationTitle>FaceSample</ApplicationTitle>
-		<ApplicationId>regula.FaceSDKSample</ApplicationId>
-
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
-
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-		<MauiImage Include="Resources\Images\*" />
-		<MauiFont Include="Resources\Fonts\*" />
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.2.1893"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Beta.iOS" Version="6.2.723-beta"/>
-	</ItemGroup>
-	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="6.1.3183"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Beta.Droid" Version="6.1.430"/>
-	</ItemGroup>
+<?xml version="1.0"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FaceSample</RootNamespace>
+    <UseMaui>true</UseMaui>
+    <SingleProject>true</SingleProject>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <NoWarn>MT4189;MT4178;NETSDK1201;XC0022</NoWarn>
+    <ApplicationTitle>FaceSample</ApplicationTitle>
+    <ApplicationId>regula.FaceSDKSample</ApplicationId>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4"/>
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128"/>
+    <MauiImage Include="Resources\Images\*"/>
+    <MauiFont Include="Resources\Fonts\*"/>
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)"/>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0"/>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7"/>
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.2.1893"/>
+    <PackageReference Include="Xamarin.FaceCore.Basic.Beta.iOS" Version="6.2.723-beta"/>
+  </ItemGroup>
+  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+    <PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2"/>
+    <PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="6.1.3183"/>
+    <PackageReference Include="Xamarin.FaceCore.Basic.Beta.Droid" Version="6.1.430"/>
+  </ItemGroup>
 </Project>
