@@ -38,6 +38,6 @@
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
 		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="6.1.154-nightly"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="6.1.91-nightly"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="6.1.93-nightly"/>
 	</ItemGroup>
 </Project>
