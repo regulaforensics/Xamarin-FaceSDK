@@ -32,12 +32,12 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.Beta.iOS" Version="6.2.1902"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Beta.iOS" Version="6.2.736-beta"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version=""/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version=""/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Beta.Android" Version="6.1.3188"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Beta.Droid" Version="6.1.430"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version=""/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="6.2.517-beta"/>
 	</ItemGroup>
 </Project>
