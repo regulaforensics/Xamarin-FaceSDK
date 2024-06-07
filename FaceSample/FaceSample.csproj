@@ -32,7 +32,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="6.1.1746"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="6.2.1933"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="6.1.584"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
