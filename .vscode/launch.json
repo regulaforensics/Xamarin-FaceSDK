@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: FaceSample",
+            "name": "Run",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/FaceSample/FaceSample.csproj",
+            "projectPath": "${workspaceFolder}/FaceSample.csproj",
             "launchConfigurationId": "vscode-maui"
         }
     ]
