@@ -8,10 +8,20 @@ namespace FaceSample.Platforms.iOS
         public FaceSdkInit()
         {
         }
-
         public void InitFaceSdk()
         {
-            RFSFaceSDK.Service.InitializeWithCompletion((bool success, NSError error) =>
+            RFSInitializationConfiguration config = null;
+            try
+            {
+                var licenseData = NSData.FromFile(NSBundle.MainBundle.PathForResource("regula.license", null));
+                config = RFSInitializationConfiguration.ConfigurationWithBuilder((RFSInitializationConfigurationBuilder builder) =>
+                {
+                    builder.LicenseData = licenseData;
+                });
+            }
+            catch (Exception) { }
+            
+            RFSFaceSDK.Service.InitializeWithConfiguration(config, (bool success, NSError error) =>
             {
                 if (success)
                 {
