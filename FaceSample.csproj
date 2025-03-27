@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
+		<TargetFrameworks>net9.0-android;net9.0-ios;</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>FaceSample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -26,18 +26,18 @@
 		<MauiFont Include="Resources\Fonts\*" />
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
-	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="6.5.46-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="6.5.52-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="6.5.53-beta"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
 		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="6.5.46-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="6.5.52-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="6.5.53-beta"/>
 	</ItemGroup>
 </Project>
