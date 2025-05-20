@@ -10,8 +10,6 @@
 		<NoWarn>MT4189;MT4178;NETSDK1201;XC0022</NoWarn>
 
 		<ApplicationTitle>FaceSample</ApplicationTitle>
-		<ApplicationId>regula.FaceSDKSample</ApplicationId>
-
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
@@ -32,12 +30,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="7.1.94-beta"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="7.1.110-beta"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="7.1.96-beta"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="7.1.94-beta"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="7.1.110-beta"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="7.1.96-beta"/>
 	</ItemGroup>
 </Project>

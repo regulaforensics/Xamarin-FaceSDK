@@ -24,7 +24,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>FaceSample</string>
 	<key>CFBundleIdentifier</key>
-	<string>regula.FaceSDKSample</string>
+	<string>com.regula.documentreader.qa</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
