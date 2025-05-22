@@ -3,20 +3,21 @@ using Foundation;
 
 namespace FaceSample;
 
+#pragma warning disable CA1806
+
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
 {
-        protected override MauiApp CreateMauiApp()
-        {
-                // WARNING: necessary!
-                // These 2 lines prevent MAUI from shrinking assemblies
-                new FaceCoreSDK.iOS.FaceSDK();
-                new RegulaCommon.iOS.RGLCCamera();
+	protected override MauiApp CreateMauiApp()
+	{
+        //WARNING!!!!
+        //Initialization FaceSDK from FaceCoreSDK is required
+        new FaceCoreSDK.iOS.FaceSDK();
 
-                DependencyService.Register<IFaceSdkInit, FaceSdkInit>();
-                DependencyService.Register<IFaceSdk, FaceSdk>();
-                DependencyService.Register<IPhotoPickerService, PhotoPickerService>();
+        DependencyService.Register<IFaceSdkInit, FaceSdkInit>();
+        DependencyService.Register<IFaceSdk, FaceSdk>();
+        DependencyService.Register<IPhotoPickerService, PhotoPickerService>();
 
-                return MauiProgram.CreateMauiApp();
-        }
+        return MauiProgram.CreateMauiApp();
+	}
 }
