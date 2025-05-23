@@ -45,7 +45,7 @@ namespace FaceSample.Platforms.Android
                 new Com.Regula.Facesdk.Model.MatchFacesImage(secondBitmap, SecondImage)
             };
             var matchFacesRequest = new MatchFacesRequest(listImages);
-            FaceSDK.Instance().MatchFaces(matchFacesRequest, this);
+            FaceSDK.Instance().MatchFaces(Platform.AppContext, matchFacesRequest, this);
         }
 
         public void OnFaceMatched(MatchFacesResponse matchFacesResponse)
