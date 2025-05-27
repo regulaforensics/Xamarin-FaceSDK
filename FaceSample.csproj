@@ -30,12 +30,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="7.1.111-beta"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="7.1.137-beta"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="7.1.96-beta"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="7.1.111-beta"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="7.1.137-beta"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="7.1.96-beta"/>
 	</ItemGroup>
 </Project>

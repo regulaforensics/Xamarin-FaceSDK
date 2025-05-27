@@ -8,8 +8,8 @@ public class AppDelegate : MauiUIApplicationDelegate
 {
         protected override MauiApp CreateMauiApp()
         {
-                //WARNING!!!!
-                //Initialization FaceSDK from FaceCoreSDK is required
+                // WARNING: necessary!
+                // These 2 lines prevent MAUI from shrinking assemblies
                 new FaceCoreSDK.iOS.FaceSDK();
                 new RegulaCommon.iOS.RGLCCamera();
 
