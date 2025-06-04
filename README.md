@@ -5,16 +5,13 @@ Face SDK is a framework that is used for face matching, recognition, and livenes
 1. Download or clone this repository using the command `git clone https://github.com/regulaforensics/Xamarin-FaceSDK.git`.
 2. Open the project and run it.
 
-## How to use offine match
+## How to use offline match
 1. Place a license that supports offline match at `Resources/Raw/regula.license`.
-2. Change android and iOS bundle id if required by your license. 
-For android in `Platforms/Android/AndroidManifest.xml` change `manifest.package`.
-For iOS in `Platforms/iOS/Info.plist` change `CFBundleIdentifier`.
-3. Change core in `FaceSample.csproj`:
+2. Change core in `FaceSample.csproj`:
 Replace `Xamarin.FaceCore.Basic.iOS` with `Xamarin.FaceCore.Match.iOS`.
 Replace `Xamarin.FaceCore.Basic.Droid` with `Xamarin.FaceCore.Match.Droid`.
 Adjust versions of changed packages if needed, beware that versions of basic and match cores may be different. You can always check them at [nuget.org](https://www.nuget.org/packages).
-4. Turn off the internet and run the app.
+3. Turn off the internet and run the app.
 
 ## Documentation
 You can find documentation on API [here](https://docs.regulaforensics.com/develop/face-sdk/mobile/).
