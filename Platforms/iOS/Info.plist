@@ -22,9 +22,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>FaceSDK</string>
+	<string>Face</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.regula.documentreader.qa</string>
+	<string>com.regula.example.face.maui</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
