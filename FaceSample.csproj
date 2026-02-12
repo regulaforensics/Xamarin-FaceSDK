@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-ios;</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios;</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>FaceSample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -9,10 +9,8 @@
 		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
 		<NoWarn>MT4189;MT4178;NETSDK1201;XC0022</NoWarn>
 
-		<ApplicationTitle>FaceSDK</ApplicationTitle>
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
 	</PropertyGroup>
@@ -26,16 +24,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.31" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="7.2.275-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="7.2.239-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="8.1.346-beta"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
 		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="7.2.275-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="7.2.239-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="8.1.346-beta"/>
 	</ItemGroup>
 </Project>
