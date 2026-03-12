@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0-android;net9.0-ios;</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios;</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>FaceSample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -24,16 +24,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.31" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="8.2.624-nightly"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="8.1.627-nightly"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="8.2.400-nightly"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="8.2.624-nightly"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="8.1.627-nightly"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="8.2.400-nightly"/>
 	</ItemGroup>
 </Project>
