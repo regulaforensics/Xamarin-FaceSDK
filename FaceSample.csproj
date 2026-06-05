@@ -8,7 +8,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ValidateXcodeVersion>false</ValidateXcodeVersion>
 		<EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-		<NoWarn>MT4189;MT4178;NETSDK1201;XC0022</NoWarn>
+		<NoWarn>MT4189;MT4178;NETSDK1201;XC0022;NU1900</NoWarn>
 
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
@@ -29,12 +29,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.3" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="8.3.827-nightly"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="8.2.828-nightly"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="8.3.585-nightly"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
-		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="8.3.827-nightly"/>
+		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="8.2.828-nightly"/>
 		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="8.3.585-nightly"/>
 	</ItemGroup>
 </Project>
