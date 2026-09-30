@@ -28,8 +28,7 @@ namespace FaceSample.Platforms.iOS
             imagePicker.Canceled += OnImagePickerCancelled;
 
             // Present UIImagePickerController;
-            UIWindow window = UIApplication.SharedApplication.KeyWindow;
-            var viewController = window.RootViewController;
+            var viewController = Platform.GetCurrentUIViewController();
             viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
