@@ -30,19 +30,7 @@ namespace FaceSample.Platforms.iOS
         {
         }
 
-        private static UIViewController CurrentPresenter
-        {
-            get
-            {
-                var window = UIApplication.SharedApplication.KeyWindow;
-                var vc = window.RootViewController;
-                while (vc.PresentedViewController != null)
-                {
-                    vc = vc.PresentedViewController;
-                }
-                return vc;
-            }
-        }
+        private static UIViewController CurrentPresenter => Platform.GetCurrentUIViewController();
 
 
         public event EventHandler<IMatchFacesEvent> MatchFacesResultsObtained;
