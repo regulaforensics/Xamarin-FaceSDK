@@ -30,12 +30,11 @@
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 		<PackageReference Include="Xamarin.Regula.FaceApi.iOS" Version="8.5.1222-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="8.5.835-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.iOS" Version="8.5.846-beta"/>
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Xamarin.AndroidX.DataBinding.ViewBinding" Version="8.0.2" />
 		<PackageReference Include="Xamarin.Regula.FaceApi.Android" Version="8.5.1222-beta"/>
-		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="8.5.835-beta"/>
+		<PackageReference Include="Xamarin.FaceCore.Basic.Droid" Version="8.5.846-beta"/>
 	</ItemGroup>
-	<Import Project="../../targets/ProjectReferences.targets" Condition="Exists('../../targets/ProjectReferences.targets')" />
 </Project>
